@@ -1,0 +1,30 @@
+<%-include('../partials/header')%>
+<%-include('../partials/nav')%>
+<form action="/songs" method="POST" class="form">
+<div class="box">
+    <label for="title">Title</label>
+    <input type="text" name="song[title]">
+</div>
+<div class="box">
+    <label for="title">Image URL</label>
+    <input type="text" name="song[image]">
+</div>
+<div class="box">
+    <label for="title">Artist</label>
+    <input type="text" name="song[artist]]">
+</div>
+<div class="box">
+    <label for="title">Youtube Link</label>
+    <input type="text" name="song[yt]">
+</div>
+<div class="box">
+    <label for="title">Ratings</label>
+    <input type="number" step="0.01" max="10" name="song[rating]">
+</div>
+<div class="box">
+    <label for="title">Review</label>
+    <textarea  name="song[review]" cols="30" rows="10"></textarea>
+</div>
+</form>
+    
+    <%-include('../partials/footer')%>
