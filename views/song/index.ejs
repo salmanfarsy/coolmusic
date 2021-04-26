@@ -1,0 +1,15 @@
+<%-include('../partials/header')%>
+<link rel="stylesheet" href="/css/index.css">
+<%-include('../partials/nav')%>
+<h1>All The Songs</h1>
+<div class="container">
+    <%songs.forEach((a)=>{%>
+       <figure>
+            <h2><%=a.title%></h2>
+            <a href="/songs/<%=a._id%>"><img src="<%=a.image%>" alt="<%=a.title%>"></a>
+            <p><%=a.artist%></p>
+        </figure>
+    <%})%>
+</div>
+
+<%-include('../partials/footer')%>

@@ -1,0 +1,18 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+figure{
+    flex-basis: 20%;
+    background-color: var(--black);
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px 3px var(--green);
+    transition: all 0.3s;
+}
+figure:hover{
+    transform: scale(1.2);
+}
+img{
+    width: 100%;
+}
