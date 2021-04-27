@@ -1,0 +1,25 @@
+<%-include('../partials/header')%>
+<link rel="stylesheet" href="/css/show.css">
+<%-include('../partials/nav')%>
+<h1><%=song.title.toUpperCase()%></h1>
+<div class="container">
+    <div class="column-1">
+        <img src="<%=song.image%>" alt="<%=song.title%>">
+        <h2>Artist : <%=song.artist%></h2>
+        <p>Rating : <%=song.rating%> /10</p>
+    </div>
+    <div class="column-2"><iframe src="https://www.youtube.com/embed/<%=song.yt%>" frameborder="0"></iframe>
+    <p>Review: <%=song.review%></p>
+    <div class="buttons"><a href="/songs/<%=song._id%>/edit">Edit</a>
+    <a href="/songs/<%=song._id%>/delete">Delete</a>
+    </div>
+    <div class="comment">
+        <h2>Comments</h2>
+    <form action="/songs/<%=song._id%>/comment">
+    <input type="text" name="text">
+    <button>Add</button>
+    </form>
+    </div>
+    </div>
+</div>
+<%-include('../partials/footer')%>

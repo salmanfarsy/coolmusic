@@ -2,27 +2,27 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    min-height: 50vh;
+  
 }
-.card{
+.column-1{
     flex-basis: 20%;
     background-color: var(--black);
     border-radius: 10px;
-    box-shadow: 1px 1px 3px 3px var(--green);
-    transition: all 0.3s;
-    text-decoration: none;
-    color: var(--green);
+    padding: 5px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-.card:hover{
-    transform: scale(1.2);
+.column-2{
+    flex-basis: 60%;
 }
-/* .card p{
-    position: relative;
-    bottom: 0;
-  
-} */
 img{
     width: 100%;
+   
+}
+iframe{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
 }

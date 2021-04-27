@@ -4,11 +4,11 @@
 <h1>All The Songs</h1>
 <div class="container">
     <%songs.forEach((a)=>{%>
-       <figure>
+        <a href="/songs/<%=a._id%>" class="card"> 
             <h2><%=a.title%></h2>
-            <a href="/songs/<%=a._id%>"><img src="<%=a.image%>" alt="<%=a.title%>"></a>
+            <img src="<%=a.image%>" alt="<%=a.title%>">
             <p><%=a.artist%></p>
-        </figure>
+        </a>
     <%})%>
 </div>
 

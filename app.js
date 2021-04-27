@@ -2,6 +2,7 @@
 const express = require('express'),
 mongoose = require('mongoose'),
 songRoute = require('./routes/song'),
+methodOverride = require('method-override'),
  app   = express();
  //mongoose config
  mongoose.connect('mongodb://localhost/coolsongs', {
@@ -14,6 +15,7 @@ songRoute = require('./routes/song'),
  app.set('view engine', 'ejs');
  app.use(express.static('public'));
  app.use(express.urlencoded({extended:true}))
+ app.use(methodOverride('_method'))
 //routes
  app.get('/', (req, res)=>{
      res.render('home');
