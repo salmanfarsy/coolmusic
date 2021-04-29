@@ -35,7 +35,7 @@ Song.create(input, (err, done)=>{
 });
 //show page
 router.get('/songs/:id', (req, res)=>{
-    Song.findById(req.params.id, (err, song)=>{
+    Song.findById(req.params.id).populate('comments').exec((err, song)=>{
         if(err){
             console.log(err)
         } else{
@@ -90,4 +90,5 @@ router.delete('/songs/:id', (req, res)=>{
         }
     })
 });
+
 module.exports = router;

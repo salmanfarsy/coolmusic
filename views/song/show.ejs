@@ -15,10 +15,17 @@
     </div>
     <div class="comment">
         <h2>Comments</h2>
-    <form action="/songs/<%=song._id%>/comment">
+    <form action="/songs/<%=song._id%>/comment" method="POST">
     <input type="text" name="text">
     <button>Add</button>
     </form>
+    <%song.comments.forEach((a)=>{%>
+        <p><%=a.text%> <div class="button">
+            <a href="/songs/<%=song._id%>/comment/<%=a._id%>/edit">Edit</a>
+            <form action="/songs/<%=song._id%>/comment/<%=a._id%>?_method=DELETE" method="POST">
+            <button>delete</button></form>
+        </div></p>
+    <%})%>
     </div>
     </div>
 </div>

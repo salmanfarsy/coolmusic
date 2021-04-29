@@ -48,3 +48,37 @@ main{
 footer{
     background-color: var(--black);
 }
+.loader{
+    background-color: black;
+    padding: 0px;
+    display: grid;
+    place-items: center;
+    position: fixed;
+    top:0;
+    left: 0;
+    /* height: 100%; */
+    width: 100%;
+    z-index: 999;
+}
+.load{
+    width: 25px;
+	height: 25px;
+	border: 10px solid rgba(141, 140, 140, 0.3);
+	border-top-color:var(--green);
+	border-bottom-color: var(--dark-green);
+	padding: 50px;
+	margin:10px auto;
+	border-radius: 100%;
+	animation: rotate 1s linear infinite;
+}
+@keyframes rotate{
+	0%{
+		transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(360deg);
+	}
+}
+.off{
+    display: none;
+}
