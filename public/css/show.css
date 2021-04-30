@@ -29,3 +29,6 @@ iframe{
     border-radius: 10px;
     box-shadow: 1px 1px 2px 5px var(--green);
 }
+.head{
+    margin: 10px;
+}

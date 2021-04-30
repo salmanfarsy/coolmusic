@@ -25,6 +25,10 @@ function yt(){
     }
   } ;
   yt();
+  input.author={
+      id:req.user._id,
+      username:req.user.username
+  }
 Song.create(input, (err, done)=>{
     if(err){
         console.log(err)

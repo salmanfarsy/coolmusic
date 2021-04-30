@@ -1,7 +1,11 @@
 <%-include('../partials/header')%>
 <link rel="stylesheet" href="/css/show.css">
 <%-include('../partials/nav')%>
-<h1><%=song.title.toUpperCase()%></h1>
+<div class="head">
+    <h1><%=song.title.toUpperCase()%></h1>
+<p>posted by <%=song.author.username%></p>
+</div>
+
 <div class="container">
     <div class="column-1">
         <img src="<%=song.image%>" alt="<%=song.title%>">
@@ -20,7 +24,7 @@
     <button>Add</button>
     </form>
     <%song.comments.forEach((a)=>{%>
-        <p><%=a.text%> <div class="button">
+        <p><em><%=a.author.username%></em> : <%=a.text%> <div class="button">
             <a href="/songs/<%=song._id%>/comment/<%=a._id%>/edit">Edit</a>
             <form action="/songs/<%=song._id%>/comment/<%=a._id%>?_method=DELETE" method="POST">
             <button>delete</button></form>

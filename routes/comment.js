@@ -9,6 +9,8 @@ Song.findById(req.params.id, (err, song)=>{
         console.log(err)
     } else{
         Comment.create({text:req.body.text}, (err, comment)=>{
+            comment.author.id = req.user._id;
+            comment.author.username = req.user.username;
           comment.save();  
           song.comments.push(comment);
           song.save();

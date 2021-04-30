@@ -3,6 +3,7 @@ const express = require('express'),
 mongoose = require('mongoose'),
 songRoute = require('./routes/song'),
 commentRoute =require('./routes/comment'),
+userRoute    = require('./routes/user'),
 methodOverride = require('method-override'),
 passport      = require('passport'),
 localpass    = require('passport-local'),
@@ -36,6 +37,7 @@ session    = require('express-session'),
  app.get('/', (req, res)=>{
      res.render('home');
  });
+ app.use(userRoute);
  app.use(songRoute);
  app.use(commentRoute);
 
