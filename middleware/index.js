@@ -9,7 +9,8 @@ const middleware ={
         } else{
             res.redirect('back');
         }
-    }
+    },
+    songAuth : 
 }
 
 module.exports = middleware;
