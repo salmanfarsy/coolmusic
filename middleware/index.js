@@ -10,7 +10,28 @@ const middleware ={
             res.redirect('back');
         }
     },
-    songAuth : 
+    songAuth : (req, res, next)=>{
+        Song.findById(req.params.id, (err, song)=>{
+            if(err){
+                console.log(err)
+            } else{
+                if(song.author.id.equals(req.user._id)){
+                    next();
+                }
+            }
+        })
+    },
+    commentAuth : (req, res, next)=>{
+        Comment.findById(req.params.id, (err, comment)=>{
+            if(err){
+                console.log(err)
+            } else{
+                if(comment.author.id.equals(req.user._id)){
+                    next();
+                }
+            }
+        })
+    }
 }
 
 module.exports = middleware;
