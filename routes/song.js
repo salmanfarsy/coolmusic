@@ -1,6 +1,7 @@
 const express = require('express');
 const router  = express.Router();
 const Song  = require('../models/song');
+const middleware = require('../middleware');
 //index
 router.get('/songs', (req, res)=>{
     Song.find({}, (err, songs)=>{
