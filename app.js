@@ -33,6 +33,11 @@ session    = require('express-session'),
  passport.serializeUser(User.serializeUser());
  passport.deserializeUser(User.deserializeUser());
  passport.use(new localpass(User.authenticate()));
+ //global variables
+ app.use((req, res, next)=>{
+    res.locals.user = req.user; 
+    next();
+ })
 //routes
  app.get('/', (req, res)=>{
      res.render('home');

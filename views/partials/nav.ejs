@@ -8,10 +8,18 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/songs">Songs</a></li>
                 <li><a href="/songs/add">Add Song</a></li>
-                <li><a href="/login">Login</a></li>
-                <li><a href="/register">Register</a></li>
-                <li><a href="/logout">Log-out</a></li>
-            </ul>
+              <% if(user){%>
+                    <li><a href="/logout">Log-out</a></li>
+                    </ul>
+                    <p>User:<%=user.username%></p> 
+               <% } else{%>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Register</a></li>
+                
+                </ul>
+               <%}%>
+            
         </nav>
+      
     </header>
     <main>
