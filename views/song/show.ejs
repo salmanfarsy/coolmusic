@@ -13,7 +13,8 @@
         <p>Rating : <%=song.rating%> /10</p>
     </div>
     <div class="column-2"><iframe src="https://www.youtube.com/embed/<%=song.yt%>" frameborder="0"></iframe>
-    <p>Review: <%=song.review%></p>
+        <div class="reviews">
+            <p>Review: <%=song.review%></p>
     <div class="buttons"><a href="/songs/<%=song._id%>/edit">Edit</a>
     <a href="/songs/<%=song._id%>/delete">Delete</a>
     </div>
@@ -31,6 +32,8 @@
         </div></p>
     <%})%>
     </div>
+        </div>
+    
     </div>
 </div>
 <%-include('../partials/footer')%>

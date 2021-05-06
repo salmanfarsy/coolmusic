@@ -15,6 +15,7 @@ input{
     border: 1px solid var(--green);
     box-shadow: 1px 1px 3px var(--dark-green);
     color: white;
+    font-size: 1.1rem;
 }
 label{
     width: 20%;
@@ -22,6 +23,8 @@ label{
 }
 input[type=submit]:hover{
 cursor: pointer;
+background-color: var(--green);
+color:var(--black);
 }
 textarea{
     background-color: transparent;
