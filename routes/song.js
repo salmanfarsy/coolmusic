@@ -95,5 +95,17 @@ router.delete('/songs/:id', (req, res)=>{
         }
     })
 });
+//search
+router.get('/search', (req, res)=>{
+    const song = req.query.song;
+    const str = eval(`/${song}/i`)
+    Song.find({title:str}, (err, songs)=>{
+        if(err){
+            console.log(err)
+        } else{
+            res.render('song/index', {songs : songs})
 
+        }
+    })
+})
 module.exports = router;
