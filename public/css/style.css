@@ -83,3 +83,10 @@ footer{
 .off{
     display: none;
 }
+.icon{
+    font-size: 2.1rem;
+}
+.icon:hover{
+transform: scale(1.4);
+cursor: pointer;
+}

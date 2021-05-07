@@ -10,19 +10,22 @@
                 <li><a href="/songs/add">Add Song</a></li>
               <% if(user){%>
                     <li><a href="/logout">Log-out</a></li>
+                    <h1 class="icon"><ion-icon name="search-circle"></ion-icon></h1>
                     </ul>
                     <p>User:<%=user.username%></p> 
                <% } else{%>
                     <li><a href="/login">Login</a></li>
                     <li><a href="/register">Register</a></li>
+                    <h1 class="icon"><ion-icon name="search-circle"></ion-icon></h1>
                 
                 </ul>
                <%}%>
-            
+                   
+      <form action="/search" method="GET" class="search off">
+        <input type="text" name="song" placeholder="enter song name"> 
+    <input type="submit" value="Search" >
+    </form>
         </nav>
-      <form action="/search" method="GET">
-    <input type="text" name="song" placeholder="enter song name"> 
-<input type="submit" value="Search" >
-</form>
+
     </header>
     <main>
