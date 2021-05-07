@@ -27,7 +27,7 @@
     <%song.comments.forEach((a)=>{%>
         <p><em><%=a.author.username%></em> : <%=a.text%> <div class="button">
             <a href="/songs/<%=song._id%>/comment/<%=a._id%>/edit">Edit</a>
-            <form action="/songs/<%=song._id%>/comment/<%=a._id%>?_method=DELETE" method="POST">
+            <form action="/songs/<%=song._id%>/comment/<%=a._id%>?_method=DELETE" method="POST" class="form">
             <button>delete</button></form>
         </div></p>
     <%})%>

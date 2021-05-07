@@ -13,7 +13,8 @@ const middleware ={
     songAuth : (req, res, next)=>{
         Song.findById(req.params.id, (err, song)=>{
             if(err){
-                console.log(err)
+                console.log(err);
+                res.redirect('back');
             } else{
                 if(song.author.id.equals(req.user._id)){
                     next();
@@ -24,7 +25,8 @@ const middleware ={
     commentAuth : (req, res, next)=>{
         Comment.findById(req.params.id, (err, comment)=>{
             if(err){
-                console.log(err)
+                console.log(err);
+                res.redirect('back');
             } else{
                 if(comment.author.id.equals(req.user._id)){
                     next();
