@@ -90,3 +90,13 @@ footer{
 transform: scale(1.4);
 cursor: pointer;
 }
+.search input{
+    background-color: var(--dark-black);
+    border: none;
+    padding: 10px;
+    color: white;
+}
+.search input[type=submit]:hover{
+background-color: var(--dark-green);
+cursor: pointer;
+}
