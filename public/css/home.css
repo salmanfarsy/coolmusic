@@ -1,0 +1,16 @@
+main{
+    margin: 0;
+    margin-top: 2px;
+}
+img{
+    width: 25%;
+    transform: skew(15deg);
+    flex-grow: 1;
+}
+.top{
+    width: 100%;
+ display: flex; 
+ justify-content: center;  
+ background-color: var(--dark-green);
+
+}
