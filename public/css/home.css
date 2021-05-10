@@ -1,8 +1,11 @@
+body{
+    overflow-x: hidden;
+}
 main{
     margin: 0;
     margin-top: 2px;
 }
-img{
+.top img{
     width: 25%;
     transform: skew(15deg);
     flex-grow: 1;
@@ -13,4 +16,36 @@ img{
  justify-content: center;  
  background-color: var(--dark-green);
 
+}
+.songs{
+    width: 100%;
+    display: flex;
+    text-align: left;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.247);
+    font-size: 1.5rem;
+}
+.text{
+    width: 80%;
+    padding: 10px;
+}
+.text>*{
+    margin-top: 10px;
+    display: block;
+}
+.songs img{
+    width: 25vw;
+}
+.songs a{
+width: fit-content;
+    text-decoration: none;
+    border: 1px solid orange;
+    background-color: orange;
+    color: var(--black);
+    padding: 5px;
+    border-radius: 5px;
+}
+.songs a:hover{
+    transform: scale(1.1);
+    background-color: rgb(160, 104, 1);
 }
