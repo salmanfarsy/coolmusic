@@ -4,6 +4,7 @@ body{
 main{
     margin: 0;
     margin-top: 2px;
+    width: 100%;
 }
 .top img{
     width: 25%;
@@ -24,6 +25,7 @@ main{
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.247);
     font-size: 1.5rem;
+    margin: 20px auto;
 }
 .text{
     width: 80%;
@@ -48,4 +50,7 @@ width: fit-content;
 .songs a:hover{
     transform: scale(1.1);
     background-color: rgb(160, 104, 1);
+}
+.two{
+  text-align: right;
 }
