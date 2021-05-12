@@ -54,3 +54,6 @@ width: fit-content;
 .two{
   text-align: right;
 }
+.two a{
+    display: inline-block;
+}
