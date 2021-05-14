@@ -24,7 +24,7 @@ main{
     text-align: left;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.247);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin: 20px auto;
 }
 .text{
@@ -56,4 +56,21 @@ width: fit-content;
 }
 .two a{
     display: inline-block;
+}
+.card{
+    background-color:rgba(0, 0, 0, 0.247) ;
+}
+.new{
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+.card{
+    flex-basis: 25vw;
+    margin: 0 20px;
+    padding: 30px;
+}
+.card  h1{
+    border-bottom: 1px solid white;
+
 }
