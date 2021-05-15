@@ -33,12 +33,9 @@ section img{
     width: 100%;
 }
 section{
-    width: 50vw;
-    max-height: 25vh;
-    margin: 10px auto;
-    align-items: center;
-    text-align: center;
+    width: 100%;
     overflow: hidden;
+    padding:25vh 25vw;
 
    
 }
@@ -63,4 +60,8 @@ section{
     to{
         transform: translateX(0);
     }
+}
+main{
+    margin: 0;
+    margin-bottom: 10px;
 }
