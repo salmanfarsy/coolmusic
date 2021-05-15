@@ -1,5 +1,6 @@
 body{
     overflow-x: hidden;
+    --btn:var(--black);
 }
 main{
     margin: 0;
@@ -73,4 +74,23 @@ width: fit-content;
 .card  h1{
     border-bottom: 1px solid white;
 
+}
+.card>*{
+    margin: 20px auto;
+}
+.card p{
+    line-height: 30px;
+    letter-spacing: 2px;
+}
+.card a{
+    text-decoration: none;
+    color: black;
+    background-color: var(--btn);
+    font-size: 1.5rem;
+    padding: 5px;
+}
+.card a:hover{
+    background-color: black;
+    transform: scale(1.2);
+    color:var(--black)
 }
