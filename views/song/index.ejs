@@ -1,12 +1,16 @@
 <%-include('../partials/header')%>
 <link rel="stylesheet" href="/css/index.css">
+<script src="/js/slide.js" defer></script>
 <%-include('../partials/nav')%>
+<section class="slide">
+    <img src="<%=songs[0].image%>" class="animation">
+</section>
 <h1>All The Songs</h1>
 <div class="container">
     <%songs.forEach((a)=>{%>
         <a href="/songs/<%=a._id%>" class="card"> 
             <h2><%=a.title%></h2>
-            <img src="<%=a.image%>" alt="<%=a.title%>">
+            <img src="<%=a.image%>" alt="<%=a.title%>" class="image">
             <p><%=a.artist%></p>
         </a>
     <%})%>

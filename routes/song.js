@@ -13,7 +13,7 @@ router.get('/songs', (req, res)=>{
     })
 })
 //add
-router.get('/songs/add', (req, res)=>{
+router.get('/songs/add', middleware.check, (req, res)=>{
     res.render('song/add');
 });
 router.post('/songs', (req, res)=>{
@@ -39,7 +39,7 @@ Song.create(input, (err, done)=>{
 })
 });
 //show page
-router.get('/songs/:id', (req, res)=>{
+router.get('/songs/:id', middleware.check, (req, res)=>{
     Song.findById(req.params.id).populate('comments').exec((err, song)=>{
         if(err){
             console.log(err)
@@ -49,7 +49,7 @@ router.get('/songs/:id', (req, res)=>{
     })
 });
 //edit
-router.get('/songs/:id/edit', (req, res)=>{
+router.get('/songs/:id/edit', middleware.songAuth, (req, res)=>{
     Song.findById(req.params.id, (err, song)=>{
         if(err){
             console.log(err)
@@ -58,7 +58,7 @@ router.get('/songs/:id/edit', (req, res)=>{
         }
     })
 });
-router.put('/songs/:id', (req, res)=>{
+router.put('/songs/:id', middleware.songAuth, (req, res)=>{
     const input = req.body.song;
 function yt(){
     if(input.yt.length > 40){
@@ -77,7 +77,7 @@ function yt(){
     } )
 });
 //delete
-router.get('/songs/:id/delete', (req, res)=>{
+router.get('/songs/:id/delete', middleware.songAuth, (req, res)=>{
     Song.findById(req.params.id, (err, song)=>{
         if(err){
             console.log(err)
@@ -86,7 +86,7 @@ router.get('/songs/:id/delete', (req, res)=>{
         }
     })
 });
-router.delete('/songs/:id', (req, res)=>{
+router.delete('/songs/:id', middleware.songAuth, (req, res)=>{
     Song.findByIdAndDelete(req.params.id, (err, done)=>{
         if(err){
             console.log(err)

@@ -25,4 +25,42 @@
 } */
 img{
     width: 100%;
+
+   
+}
+section img{
+    height:100%;
+    width: 100%;
+}
+section{
+    width: 50vw;
+    max-height: 25vh;
+    margin: 10px auto;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+
+   
+}
+.animation{
+    animation: come 1s linear ;
+}
+.animation0{
+    animation: go 1s linear ;
+}
+@keyframes come{
+    from{
+        transform: translateX(-500px);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+@keyframes go{
+    from{
+        transform: translateX(-500px);
+    }
+    to{
+        transform: translateX(0);
+    }
 }
