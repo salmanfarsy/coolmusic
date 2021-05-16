@@ -73,6 +73,7 @@ width: fit-content;
 }
 .card  h1{
     border-bottom: 1px solid white;
+    padding: 5px;
 
 }
 .card>*{

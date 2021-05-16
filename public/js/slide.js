@@ -44,6 +44,7 @@ function check(){
     div.style.background = `url(${img[0].src}) `;
     div.style.backgroundSize ='cover' ;
     div.style.backgroundAttachment ='fixed';
+    div.style.transition = 'all 1s';
  };
  set();
 

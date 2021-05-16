@@ -2,6 +2,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    margin: 10px auto;
+    height: 100%;
+    width: 100%;
 }
 .card{
     flex-basis: 20%;
@@ -64,4 +67,11 @@ section{
 main{
     margin: 0;
     margin-bottom: 10px;
+}
+section h1{
+background-color: rgba(0, 0, 0, 0.432);
+width: fit-content;
+margin: 0 auto;
+font-size: 2rem;
+padding: 20px;
 }

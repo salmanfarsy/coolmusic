@@ -3,9 +3,10 @@
 <script src="/js/slide.js" defer></script>
 <%-include('../partials/nav')%>
 <section class="slide">
+    <h1>All The Songs</h1>
     <!-- <img src="<%=songs[0].image%>" class="animation"> -->
 </section>
-<h1>All The Songs</h1>
+
 <div class="container">
     <%songs.forEach((a)=>{%>
         <a href="/songs/<%=a._id%>" class="card"> 
