@@ -20,7 +20,7 @@ let count = 0;
 //     }
 // }
 function slide(){
-  
+    if(img.length>0){
       div.style.background = `url(${img[count].src}) `;
       div.style.backgroundSize ='cover' ;
       
@@ -29,6 +29,7 @@ function slide(){
      
        count++;
        check();
+    }
 
 }
 
@@ -41,10 +42,12 @@ function check(){
 }
  setInterval(slide, 5000);
  function set(){
+    if(img.length>0){
     div.style.background = `url(${img[0].src}) `;
     div.style.backgroundSize ='cover' ;
     div.style.backgroundAttachment ='fixed';
     div.style.transition = 'all 1s';
+    }
  };
  set();
 

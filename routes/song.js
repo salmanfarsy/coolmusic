@@ -6,7 +6,9 @@ const middleware = require('../middleware');
 router.get('/songs', (req, res)=>{
     Song.find({}, (err, songs)=>{
         if(err){
-            console.log(err)
+            console.log(err);
+            req.flash('error', 'Something went Wrong');
+            res.redirect('back');
         } else{
             res.render('song/index', {songs : songs})
         }
@@ -32,8 +34,11 @@ function yt(){
   }
 Song.create(input, (err, done)=>{
     if(err){
-        console.log(err)
+        console.log(err);
+        req.flash('error', 'Something went Wrong');
+        res.redirect('back');
     } else{
+        req.flash('done', 'New Song Added');
         res.redirect('/songs');
     }
 })
@@ -42,7 +47,9 @@ Song.create(input, (err, done)=>{
 router.get('/songs/:id', middleware.check, (req, res)=>{
     Song.findById(req.params.id).populate('comments').exec((err, song)=>{
         if(err){
-            console.log(err)
+            console.log(err);
+            req.flash('error', 'Something went Wrong');
+            res.redirect('back');
         } else{
             res.render('song/show', {song : song})
         }
@@ -52,7 +59,9 @@ router.get('/songs/:id', middleware.check, (req, res)=>{
 router.get('/songs/:id/edit', middleware.songAuth, (req, res)=>{
     Song.findById(req.params.id, (err, song)=>{
         if(err){
-            console.log(err)
+            console.log(err);
+            req.flash('error', 'Something went Wrong');
+            res.redirect('back');
         } else{
             res.render('song/edit', {song : song})
         }
@@ -70,8 +79,11 @@ function yt(){
   yt();
     Song.findByIdAndUpdate(req.params.id, input, (err, done)=>{
         if(err){
-            console.log(err)
+            console.log(err);
+            req.flash('error', 'Something went Wrong');
+            res.redirect('back');
         } else{
+            req.flash('done', 'Song Was Edited');
             res.redirect('/songs/' + req.params.id);
         }
     } )
@@ -80,8 +92,11 @@ function yt(){
 router.get('/songs/:id/delete', middleware.songAuth, (req, res)=>{
     Song.findById(req.params.id, (err, song)=>{
         if(err){
-            console.log(err)
+            console.log(err);
+            req.flash('error', 'Something went Wrong');
+            res.redirect('back');
         } else{
+           
             res.render('song/delete', {song : song})
         }
     })
@@ -89,8 +104,11 @@ router.get('/songs/:id/delete', middleware.songAuth, (req, res)=>{
 router.delete('/songs/:id', middleware.songAuth, (req, res)=>{
     Song.findByIdAndDelete(req.params.id, (err, done)=>{
         if(err){
-            console.log(err)
+            console.log(err);
+            req.flash('error', 'Something went Wrong');
+            res.redirect('back');
         } else{
+            req.flash('done', 'Song was Deleted');
             res.redirect('/songs');
         }
     })
@@ -101,7 +119,9 @@ router.get('/search', (req, res)=>{
     const str = eval(`/${song}/i`)
     Song.find({title:str}, (err, songs)=>{
         if(err){
-            console.log(err)
+            console.log(err);
+            req.flash('error', 'No Song Found');
+            res.redirect('back');
         } else{
             res.render('song/index', {songs : songs})
 

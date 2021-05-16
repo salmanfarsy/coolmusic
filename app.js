@@ -9,6 +9,7 @@ passport      = require('passport'),
 localpass    = require('passport-local'),
 User        = require('./models/user'),
 session    = require('express-session'),
+flash     = require('connect-flash'),
  app   = express();
  //mongoose config
  mongoose.connect('mongodb://localhost/coolsongs', {
@@ -22,6 +23,7 @@ session    = require('express-session'),
  app.use(express.static('public'));
  app.use(express.urlencoded({extended:true}))
  app.use(methodOverride('_method'));
+ app.use(flash());
  //passport config
  app.use(session({
      secret:'I really like kpop',
@@ -35,6 +37,8 @@ session    = require('express-session'),
  passport.use(new localpass(User.authenticate()));
  //global variables
  app.use((req, res, next)=>{
+     res.locals.done = req.flash('done');
+     res.locals.error = req.flash('error');
     res.locals.user = req.user; 
     next();
  })

@@ -1,10 +1,17 @@
+<script src="/js/nav.js" defer></script>
 </head>
 <body>
     <div class="loader">Please Wait Loading...<div class="load"></div></div>
     <header>
         <h1>Cool Music</h1>
         <nav>
-            <ul>
+            <div class="icon-btn">
+                <span class="first"></span>
+        <span class="second"></span>
+        <span class="third"></span>
+        </div>
+        <h1 class="cross off">X</h1>
+            <ul> 
                 <li><a href="/">Home</a></li>
                 <li><a href="/songs">Songs</a></li>
                 <li><a href="/songs/add">Add Song</a></li>
@@ -20,7 +27,7 @@
                 
                 </ul>
                <%}%>
-                   
+       
       <form action="/search" method="GET" class="search off">
         <input type="text" name="song" placeholder="enter song name"> 
     <input type="submit" value="Search" >
@@ -28,4 +35,10 @@
         </nav>
 
     </header>
+   <% if(done.length>0){%>
+        <h1 class="good"><%=done%></h1>
+    <%}%>
+    <% if(error.length>0){%>
+        <h1 class="bad"><%=error%></h1>
+    <%}%>
     <main>

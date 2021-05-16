@@ -31,3 +31,17 @@ textarea{
     border: 1px solid var(--dark-green);
     color: white;
 }
+.cancel{
+    text-decoration: none;
+    color: var(--black);
+    background-color: slateblue;
+    font-size: 2rem;
+    border-radius: 5px;
+    padding: 5px;
+    display: block;
+    width: 50%;
+    margin: 10px auto;
+}
+.cancel:hover{
+    background-color: rgb(57, 50, 109);
+}

@@ -50,6 +50,9 @@ main{
 }
 footer{
     background-color: var(--black);
+    padding: 5px;
+    font-size: 0.8rem;
+    color: slategray;
 }
 .loader{
     background-color: var(--black);
@@ -102,3 +105,62 @@ cursor: pointer;
 background-color: var(--dark-green);
 cursor: pointer;
 }
+.good{
+    padding: 10px;
+    color: springgreen;
+}
+.bad{
+    padding: 10px;
+    color: crimson; 
+}
+.icon-btn{
+	display: none;
+	flex-wrap: wrap;
+	width: 50px;
+    margin: 5px;
+	
+
+
+}
+.icon-btn.off{
+    display: none;
+}
+span{
+	width: 100%;
+	background-color: var(--green);
+	padding: 4px;
+	margin: 1px;
+	display:block;
+	border-radius: 10px;
+
+
+}
+.cross{
+    background-color: transparent;
+}
+nav ul.on{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 10;
+    right:5px;
+    background-color: var(--dark-black);
+    padding: 5px;
+    justify-content: space-around;
+    transition: all 2s;
+}
+nav ul.on>*{
+    margin: 4px;
+    border-bottom: 1px solid white;;
+}
+
+@media only screen and (max-width: 650px){
+nav ul{
+    display: none;
+}
+.icon-btn{
+    display: flex;
+}
+
+}
+

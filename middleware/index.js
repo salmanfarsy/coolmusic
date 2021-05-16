@@ -7,6 +7,7 @@ const middleware ={
         if(req.isAuthenticated()){
             next();
         } else{
+            req.flash('error', 'Sign in or Register' );
             res.redirect('back');
         }
     },

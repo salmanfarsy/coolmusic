@@ -11,9 +11,11 @@ router.post('/register', (req, res)=>{
     User.register(new User({username : req.body.username}), req.body.password, (err, user)=>{
         if(err){
             console.log(err);
+            req.flash('error', err.message);
             res.redirect('back');
         } else{
             passport.authenticate('local')(req, res, ()=>{
+                req.flash('done', 'Welcome New User');
                 res.redirect('/songs')
             })
         }
@@ -25,11 +27,15 @@ router.get('/login', (req, res)=>{
 });
 router.post('/login', passport.authenticate('local', {
     successRedirect:'/songs',
-    failureRedirect:'back'
+    successFlash:'done',
+    successMessage:'Welcome Back',
+    failureRedirect:'back',
+    failureFlash:'User Dont exist or something went wrong'
 }) ,(req, res)=>{});
 //logout
 router.get('/logout', (req, res)=>{
     req.logout();
+    req.flash('done', 'Log-out Successful');
     res.redirect('back');
 })
 module.exports = router;

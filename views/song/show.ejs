@@ -15,9 +15,12 @@
     <div class="column-2"><iframe src="https://www.youtube.com/embed/<%=song.yt%>" frameborder="0"></iframe>
         <div class="reviews">
             <p>Review: <%=song.review%></p>
-    <div class="buttons"><a href="/songs/<%=song._id%>/edit">Edit</a>
-    <a href="/songs/<%=song._id%>/delete">Delete</a>
-    </div>
+           <% if(song.author.id.equals(user._id)){%>
+                <div class="buttons"><a href="/songs/<%=song._id%>/edit">Edit</a>
+                    <a href="/songs/<%=song._id%>/delete">Delete</a>
+                    </div>
+            <%}%>
+    
     <div class="comment">
         <h2>Comments</h2>
     <form action="/songs/<%=song._id%>/comment" method="POST">
@@ -26,10 +29,14 @@
     </form>
     <%song.comments.forEach((a)=>{%>
         <p><em><%=a.author.username%></em> : <%=a.text%> <div class="button">
+            <% if(a.author.id.equals(user._id)){%>
             <a href="/songs/<%=song._id%>/comment/<%=a._id%>/edit">Edit</a>
+            <%}%>
+            <% if(song.author.id.equals(user._id) || a.author.id.equals(user._id)){%>
             <form action="/songs/<%=song._id%>/comment/<%=a._id%>?_method=DELETE" method="POST" class="form">
             <button>delete</button></form>
         </div></p>
+    <%}%>
     <%})%>
     </div>
         </div>
