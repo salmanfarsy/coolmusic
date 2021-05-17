@@ -10,7 +10,7 @@ localpass    = require('passport-local'),
 Song        = require('./models/song'),
 Comment   = require('./models/comment'),
 User        = require('./models/user'),
-session    = require('express-session'),
+session    = require('cookie-session'),
 flash     = require('connect-flash'),
  app   = express();
  //mongoose config
