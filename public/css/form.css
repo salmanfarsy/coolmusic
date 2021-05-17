@@ -19,7 +19,7 @@ input{
 }
 label{
     width: 20%;
-    font-size: 20px;
+    font-size: 1rem;
 }
 input[type=submit]:hover{
 cursor: pointer;
@@ -44,4 +44,19 @@ textarea{
 }
 .cancel:hover{
     background-color: rgb(57, 50, 109);
+}
+@media only screen and (max-width: 900px){
+    html, body{
+        font-size: 15px;
+    }
+    .form {
+        width: 100%;}
+        input{
+           margin-right:10px ;
+        }
+}
+@media only screen and (max-width: 400px){
+    html, body{
+        font-size: 10px;
+    }
 }

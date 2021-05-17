@@ -78,3 +78,20 @@ iframe{
     --button:pink;
     border: none;
 }
+@media only screen and (max-width: 900px){
+    .column-1 {
+        flex-basis: 100%;
+        order: 2;}
+
+.column-2 {
+    flex-basis: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+iframe {
+    width: 100%;
+    margin: 10px auto;}
+}
+
+

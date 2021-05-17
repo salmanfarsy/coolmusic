@@ -12,7 +12,14 @@ session    = require('express-session'),
 flash     = require('connect-flash'),
  app   = express();
  //mongoose config
- mongoose.connect('mongodb://localhost/coolsongs', {
+//  mongoose.connect('mongodb://localhost/coolsongs', {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+//   useFindAndModify: false,
+//   useCreateIndex: true
+// });
+//online mongo cloud
+mongoose.connect('mongodb+srv://salman:yyM5vn0uXut6ModU@cluster0.bzg4h.mongodb.net/songs?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
@@ -51,6 +58,6 @@ flash     = require('connect-flash'),
  app.use(commentRoute);
 
 //port
- app.listen(3000, ()=>{
+ app.listen(3000 || process.env.PORT, ()=>{
      console.log('get on your website i am running it')
  })

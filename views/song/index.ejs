@@ -3,7 +3,14 @@
 <script src="/js/slide.js" defer></script>
 <%-include('../partials/nav')%>
 <section class="slide">
-    <h1>All The Songs</h1>
+   <% if(songs.length<=0){%>
+   
+        <h1>Oopsie! No Songs FOund</h1>
+    <%}%>
+    <%if(songs.length>0){%>
+        <h1>All The Songs</h1>
+    <%}%>
+
  
 </section>
 

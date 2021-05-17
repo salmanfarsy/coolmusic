@@ -6,7 +6,7 @@ btnNav.addEventListener('click', show);
 cross.addEventListener('click', hide);
 document.querySelector('body').addEventListener('click', hide);
 
-function show(){
+function show(event){
     event.stopPropagation();
     btnNav.classList.add('off');
     cross.classList.remove('off');

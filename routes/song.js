@@ -128,4 +128,8 @@ router.get('/search', (req, res)=>{
         }
     })
 })
+//wish
+router.get('/wish', (req, res)=>{
+    res.render('wish');
+})
 module.exports = router;
