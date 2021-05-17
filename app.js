@@ -60,6 +60,6 @@ mongoose.connect('mongodb+srv://salman:yyM5vn0uXut6ModU@cluster0.bzg4h.mongodb.n
  app.use(commentRoute);
 
 //port
- app.listen(3000 || process.env.PORT, ()=>{
+ app.listen( process.env.PORT || 3000, ()=>{
      console.log('get on your website i am running it')
  })
