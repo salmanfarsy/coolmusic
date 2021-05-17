@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const user = require('../../your-games/models/user');
 const monpass = require('passport-local-mongoose');
 
 const userSchema = new mongoose.Schema({
