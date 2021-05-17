@@ -35,7 +35,7 @@ mongoose.connect('mongodb+srv://salman:yyM5vn0uXut6ModU@cluster0.bzg4h.mongodb.n
  app.use(flash());
  //passport config
  app.use(session({
-     secret:'I really like kpop',
+     secret:'kpop',
      resave:false,
      saveUninitialized:false
  }));
